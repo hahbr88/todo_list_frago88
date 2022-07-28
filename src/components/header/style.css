@@ -1,0 +1,14 @@
+.container {
+    height: 60px;
+    align-items: center;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 20px;
+
+    background-image: url("../../../public/logo.png");
+    background-repeat: no-repeat;
+    background-position: 13%;
+}
