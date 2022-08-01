@@ -14,13 +14,13 @@ function Layout() {
             id: 1, 
             title: '리액트 공부하기', 
             body: '리액트 기초를 공부해봅시다.', 
-            isDone: false
+            isDone: false,
         },
         {
             id: 2, 
             title: '알고리즘 문제 풀기', 
             body: '프로그래머스 문제.', 
-            isDone: true
+            isDone: true,
         }, 
     ]);
 

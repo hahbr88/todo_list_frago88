@@ -5,7 +5,7 @@ import "./style.css";
 import Todo from "../todo/Todo";
 
 function List({ todoBoxes, setTodoBoxes }) {
-
+  console.log(todoBoxes)
   function delTodo(id) {
     setTodoBoxes(todoBoxes.filter((element) => element.id !== id));
   }
@@ -45,7 +45,13 @@ function List({ todoBoxes, setTodoBoxes }) {
       <div className="todo_container">
         {todoBoxes.map((e, index) => {
           if (e.isDone === true) {
-            return <Todo key={index} todoBoxes={e} setTodoBoxes={setTodoBoxes} delTodo = {delTodo} checkDone={checkDone} />;
+            return (
+            <Todo key={index} 
+            todoBoxes={e} 
+            setTodoBoxes={setTodoBoxes} 
+            delTodo = {delTodo} 
+            checkDone={checkDone} 
+            />);
           } 
             return null
           
