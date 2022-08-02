@@ -1,17 +1,10 @@
 import React from "react"
 import "./App.css"
-import TodoList from "./pages/TodoList";
+
+import Router from "./shared/Router";
 
 function App() {
-  
-  return (
-
-    <div className="app">
-      <TodoList/>
-    </div>
-
-
-  )
+  return <Router/>;
 }
 
 export default App;
