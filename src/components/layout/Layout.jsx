@@ -9,6 +9,8 @@ const LayoutStyle = styled.div`
     max-width: 1200px;
     min-width: 800px;
     display: block;
+
+    font-family: 'Nanum Pen Script', cursive;
 `
 function Layout() {
     return (

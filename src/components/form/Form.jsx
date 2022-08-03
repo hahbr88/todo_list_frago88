@@ -60,7 +60,7 @@ const InputGroup = styled.div`
 function Form() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const todos = useSelector((state) => state.inputTodo.todos);
+  // const todos = useSelector((state) => state.inputTodo.todos);
   // console.log(todos.at(-1).id + 2);  // 이렇게 하면 고유 값이 나올줄 알았는데 아니었다.
   const dispatch = useDispatch(); // dispatch 생성
 

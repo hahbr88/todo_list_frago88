@@ -7,6 +7,7 @@ import { useSelector } from "react-redux"; // import 해주세요.
 const Background = styled.div`
     margin: 0;
     height: 100vh;
+    font-family: 'Nanum Pen Script', cursive;
 `
 const Modal = styled.div`
     width: 50%;
@@ -36,6 +37,8 @@ const Top = styled.div`
             height: 40px;
             width: 140px;
             cursor: pointer;
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 20px;
         }
 
     font-family: 'Jua', sans-serif;
@@ -76,6 +79,5 @@ const Detail = () => {
         </Background>
     )
 }
-
 
 export default Detail;

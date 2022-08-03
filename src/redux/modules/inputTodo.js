@@ -3,7 +3,10 @@ const DEL_TODO = "DEL_TODO";
 const CHANGE_TODO = "CHANGE_TODO";
 
 export const inputTodo = (payload) => {
-  return { type: INPUT_TODO, payload };
+  return { 
+    type: INPUT_TODO, 
+    payload : payload
+  };
 };
 
 export const delTodo = (payload) => {
@@ -33,11 +36,8 @@ const initialState = {
 
 // 리듀서
 const todos = (state = initialState, action) => {
-  console.log(action);
-  console.log(state);
+  console.log(action.payload);
   console.log(state.todos);
-  console.log(state.todos.at(-1));
-  console.log(state.todos.at(-1).id + 1);
 
   switch (action.type) {
     case INPUT_TODO:
@@ -53,11 +53,11 @@ const todos = (state = initialState, action) => {
     case CHANGE_TODO:
       return {
         ...state,
-        todos: state.todos.map((el) => {
-          if (el.id === action.payload) {
-            return { ...el, isDone: !el.isDone };
+        todos: state.todos.map((element) => {
+          if (element.id === action.payload) {
+            return { ...element, isDone: !element.isDone };
           } else {
-            return { ...el };
+            return { ...element };
           }
         }),
       };
