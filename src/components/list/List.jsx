@@ -1,63 +1,54 @@
 import React from "react";
-// import { useState } from "react";
-import "./style.css";
-
+import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { delTodo, changeTodo } from "../../redux/modules/inputTodo";
 import Todo from "../todo/Todo";
 
-function List({ todoBoxes, setTodoBoxes }) {
-  console.log(todoBoxes)
-  function delTodo(id) {
-    setTodoBoxes(todoBoxes.filter((element) => element.id !== id));
+
+const TodoContainer = styled.div`
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    min-height: 200px;
+`
+
+function List() {
+  const todos = useSelector((state) => state.inputTodo.todos);
+
+  const dispatch = useDispatch();
+
+  const onDelTodo = (id) => {
+    dispatch(delTodo(id))
   }
 
-  function checkDone(id) {
-    console.log(id);
-    const todo_list = todoBoxes.map((el) => {
-      if (el.id === id) {
-        // el.isDone = !el.isDone;
-        return { ...el, isDone: !el.isDone };
-        // return el;
-      } else {
-        return { ...el };
-        // return el;
-      }
-    });
-    setTodoBoxes(todo_list);
+  const onChangeTodo = (id) => {
+    dispatch(changeTodo(id))
   }
 
   return (
-    <div className="list_container">
+    <>
       <h1>Working..🔥</h1>
-      
-      <div className="todo_container">
-        {todoBoxes.map((e, index) => {
+      <TodoContainer>
+        {todos.map((e, index) => {
           if (e.isDone === false) {
-            return <Todo key={index} todoBoxes={e} setTodoBoxes={setTodoBoxes} delTodo = {delTodo} checkDone={checkDone} />;
+            return <Todo key={index} todoBoxes={e} delTodo={onDelTodo} checkDone={onChangeTodo} />;
           }
-            return null
-          
+          return null;
         })}
-      </div>
-      <hr style={{margin: '30px 10px 10px 10px', border: 'dashed 1px #8c94c3'}}/>
+      </TodoContainer>
+      <hr style={{ margin: "30px 10px 10px 10px", border: "dashed 1px #8c94c3" }} />
 
       <h1>Done..!🎉</h1>
-
-      <div className="todo_container">
-        {todoBoxes.map((e, index) => {
+      <TodoContainer>
+        {todos.map((e, index) => {
           if (e.isDone === true) {
-            return (
-            <Todo key={index} 
-            todoBoxes={e} 
-            setTodoBoxes={setTodoBoxes} 
-            delTodo = {delTodo} 
-            checkDone={checkDone} 
-            />);
-          } 
-            return null
-          
+            return <Todo key={index} todoBoxes={e} delTodo={onDelTodo} checkDone={onChangeTodo} />;
+          }
+          return null;
         })}
-      </div>
-    </div>
+      </TodoContainer>
+    </>
   );
 }
 

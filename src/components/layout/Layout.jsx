@@ -1,37 +1,24 @@
-import React, {useState} from "react";
-
+import React from "react";
 import Header from "../header/Header";
 import Form from "../form/Form";
 import List from "../list/List";
+import styled from "styled-components";
 
-import "./style.css";
-
-
+const LayoutStyle = styled.div`
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 800px;
+    display: block;
+`
 function Layout() {
-
-    const [todoBoxes, setTodoBoxes] = useState([
-        {
-            id: 1, 
-            title: '리액트 공부하기', 
-            body: '리액트 기초를 공부해봅시다.', 
-            isDone: false,
-        },
-        {
-            id: 2, 
-            title: '알고리즘 문제 풀기', 
-            body: '프로그래머스 문제.', 
-            isDone: true,
-        }, 
-    ]);
-
-    // console.log(todoBoxes)
-
     return (
-        <div className="layout">
+        <LayoutStyle className="layout">
             <Header/>
-            <Form todoBoxes = {todoBoxes} setTodoBoxes = {setTodoBoxes}/>
-            <List todoBoxes = {todoBoxes} setTodoBoxes = {setTodoBoxes}/>          
-        </div>
+            {/* <Form todoBoxes = {todoBoxes} setTodoBoxes = {setTodoBoxes}/>
+            <List todoBoxes = {todoBoxes} setTodoBoxes = {setTodoBoxes}/>           */}
+            <Form/>
+            <List/>          
+        </LayoutStyle>
     );
 }
 
