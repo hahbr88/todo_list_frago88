@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
 import { inputTodo } from "../../redux/modules/todo";
-import { useDispatch, useSelector } from "react-redux"; // import 해주세요.
+import { useDispatch } from "react-redux"; // import 해주세요.
 
 const InputForm = styled.form`
   align-items: center;
