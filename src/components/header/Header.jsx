@@ -12,8 +12,7 @@ const Container = styled.div`
     font-weight: 700;
     font-size: 20px;
 
-    /* background-image: url('img/logo.png'); */
-    /* background-image: url('https://ifh.cc/g/lqxgbl.png'); */
+    background-image: url('img/logo.png');
     background-repeat: no-repeat;
     background-position: 13%;
 `
