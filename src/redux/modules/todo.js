@@ -3,9 +3,9 @@ const DEL_TODO = "DEL_TODO";
 const CHANGE_TODO = "CHANGE_TODO";
 
 export const inputTodo = (payload) => {
-  return { 
-    type: INPUT_TODO, 
-    payload : payload
+  return {
+    type: INPUT_TODO,
+    payload: payload,
   };
 };
 
@@ -41,19 +41,22 @@ const todos = (state = initialState, action) => {
 
   switch (action.type) {
     case INPUT_TODO:
+      let copyTodosForInp = state
       return {
-        ...state,
-        todos: [...state.todos, action.payload],
+        ...copyTodosForInp,
+        todos: [...copyTodosForInp.todos, action.payload],
       };
     case DEL_TODO:
+      let copyTodosForDel = state
       return {
-        ...state,
-        todos: state.todos.filter((element) => element.id !== action.payload),
+        ...copyTodosForDel,
+        todos: copyTodosForDel.todos.filter((element) => element.id !== action.payload),
       };
     case CHANGE_TODO:
+      let copyTodosForChg = state
       return {
-        ...state,
-        todos: state.todos.map((element) => {
+        ...copyTodosForChg,
+        todos: copyTodosForChg.todos.map((element) => {
           if (element.id === action.payload) {
             return { ...element, isDone: !element.isDone };
           } else {

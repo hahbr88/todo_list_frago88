@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { delTodo, changeTodo } from "../../redux/modules/inputTodo";
+import { delTodo, changeTodo } from "../../redux/modules/todo";
 import Todo from "../todo/Todo";
 
 
@@ -14,7 +14,7 @@ const TodoContainer = styled.div`
 `
 
 function List() {
-  const todos = useSelector((state) => state.inputTodo.todos);
+  const todos = useSelector((state) => state.todo.todos);
 
   const dispatch = useDispatch();
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
-import { inputTodo } from "../../redux/modules/inputTodo";
+import { inputTodo } from "../../redux/modules/todo";
 import { useDispatch, useSelector } from "react-redux"; // import 해주세요.
 
 const InputForm = styled.form`
@@ -61,7 +61,7 @@ function Form() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   // const todos = useSelector((state) => state.inputTodo.todos);
-  // console.log(todos.at(-1).id + 2);  // 이렇게 하면 고유 값이 나올줄 알았는데 아니었다.
+  // console.log(todos.at(-1).id + 1);  // 이렇게 하면 고유 값이 나올줄 알았는데 아니었다.
   const dispatch = useDispatch(); // dispatch 생성
 
   const onSubmitHandler = (e) => {

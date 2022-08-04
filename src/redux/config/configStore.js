@@ -1,10 +1,10 @@
 import { createStore } from "redux";
 import { combineReducers } from "redux";
 
-import inputTodo from "../modules/inputTodo";
+import todo from "../modules/todo";
 
 const rootReducer = combineReducers({
-    inputTodo : inputTodo,
+    todo : todo,
 });
 const store = createStore(rootReducer);
 
