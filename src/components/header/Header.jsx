@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import './css.css'
 
 const Container = styled.div`
     height: 60px;
